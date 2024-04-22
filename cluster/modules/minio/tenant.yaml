@@ -1,0 +1,22 @@
+secrets:
+  name: idp-tenant-env-configuration
+  accessKey: idp-tenant-access
+  secretKey: idp-tenant-secret
+tenant:
+  name: idp-tenant
+
+  configuration:
+    name: idp-tenant-env-configuration
+
+  pools:
+  - servers: 1
+    name: pool-0
+    volumesPerServer: 1
+    
+  buckets:
+    - name: idp-config
+    - name: idp-bronze
+    - name: idp-silver
+
+  certificate:
+    requestAutoCert: false

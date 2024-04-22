@@ -1,0 +1,9 @@
+secret:
+  - envName: "AIRFLOW_CONN_KUBERNETES_IDP"
+    secretName: "kubernetes-connection"
+    secretKey: "AIRFLOW_CONN_KUBERNETES_IDP"
+
+extraSecrets:
+  kubernetes-connection: # kubernetes:///?__extra__=%7B%22in_cluster%22%3A+true%2C+%22disable_verify_ssl%22%3A+false%2C+%22disable_tcp_keepalive%22%3A+false%7D
+    data: |
+      AIRFLOW_CONN_KUBERNETES_IDP: a3ViZXJuZXRlczovLy8/X19leHRyYV9fPSU3QiUyMmluX2NsdXN0ZXIlMjIlM0ErdHJ1ZSUyQyslMjJkaXNhYmxlX3ZlcmlmeV9zc2wlMjIlM0ErZmFsc2UlMkMrJTIyZGlzYWJsZV90Y3Bfa2VlcGFsaXZlJTIyJTNBK2ZhbHNlJTdE

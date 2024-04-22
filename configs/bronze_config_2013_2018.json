@@ -1,0 +1,215 @@
+{
+  "folders": [
+    {
+      "name": "2013",
+      "inputPath": "/s3a://idp-bronze/raw/2013",
+      "outputPath": "/s3a://idp-bronze/processed/2013/"
+    },
+    {
+      "name": "2014",
+      "inputPath": "/s3a://idp-bronze/raw/2014",
+      "outputPath": "/s3a://idp-bronze/processed/2014/"
+    },
+    {
+      "name": "2015",
+      "inputPath": "/s3a://idp-bronze/raw/2015",
+      "outputPath": "/s3a://idp-bronze/processed/2015/"
+    },
+    {
+      "name": "2016",
+      "inputPath": "/s3a://idp-bronze/raw/2016",
+      "outputPath": "/s3a://idp-bronze/processed/2016/"
+    },
+    {
+      "name": "2017",
+      "inputPath": "/s3a://idp-bronze/raw/2017",
+      "outputPath": "/s3a://idp-bronze/processed/2017/"
+    },
+    {
+      "name": "2018",
+      "inputPath": "/s3a://idp-bronze/raw/2018",
+      "outputPath": "/s3a://idp-bronze/processed/2018/"
+    }
+  ],
+  "metadataStructure": {
+    "lines": 8,
+    "values": [
+      {
+        "columnName": "co_regiao",
+        "columnType": "string"
+      },
+      { 
+        "columnName": "co_df", 
+        "columnType": "string" 
+      },
+      { 
+        "columnName": "ds_estacao", 
+        "columnType": "string" 
+      },
+      { 
+        "columnName": "co_estacao", 
+        "columnType": "string" 
+      },
+      {
+        "columnName": "nu_latitude",
+        "columnType": "double",
+        "regexpReplace": [
+          ["[.]", ""],
+          [",", "."]
+        ]
+      },
+      {
+        "columnName": "nu_longitude",
+        "columnType": "double",
+        "regexpReplace": [
+          ["[.]", ""],
+          [",", "."]
+        ]
+      },
+      {
+        "columnName": "nu_altitude",
+        "columnType": "double",
+        "regexpReplace": [
+          ["[.]", ""],
+          [",", "."]
+        ]
+      },
+      { "columnName": "dt_data_fundacao", "columnType": "string" }
+    ]
+  },
+  "tableStructure": [
+    {
+      "columnName": "dt_data",
+      "columnType": "date",
+      "toDateFormat": "yyyy-MM-dd"
+    },
+    {
+      "columnName": "hr_hora_utc",
+      "columnType": "int",
+      "regexpReplace": [
+        [" UTC", ""],
+        [":", ""]
+      ]
+    },
+    {
+      "columnName": "nu_precipitacao_total_milimetro",
+      "columnType": "double",
+      "regexpReplace": [
+        ["[.]", ""],
+        [",", "."]
+      ]
+    },
+    {
+      "columnName": "nu_pressao_atmosferica_max_ant_milibares",
+      "columnType": "double",
+      "regexpReplace": [
+        ["[.]", ""],
+        [",", "."]
+      ]
+    },
+    {
+      "columnName": "nu_pressao_atmosferica_min_ant_milibares",
+      "columnType": "double",
+      "regexpReplace": [
+        ["[.]", ""],
+        [",", "."]
+      ]
+    },
+    {
+      "columnName": "nu_pressao_atmosferica_min_milibares",
+      "columnType": "double",
+      "regexpReplace": [
+        ["[.]", ""],
+        [",", "."]
+      ]
+    },
+    {
+      "columnName": "nu_radicao_global_kj_m",
+      "columnType": "double",
+      "regexpReplace": [
+        ["[.]", ""],
+        [",", "."]
+      ]
+    },
+    {
+      "columnName": "nu_temperatura_ar_bulbo_seco_celcius",
+      "columnType": "double",
+      "regexpReplace": [
+        ["[.]", ""],
+        [",", "."]
+      ]
+    },
+    {
+      "columnName": "nu_temperatura_ponto_orvalho_celcius",
+      "columnType": "double",
+      "regexpReplace": [
+        ["[.]", ""],
+        [",", "."]
+      ]
+    },
+    {
+      "columnName": "nu_temperatura_min_celcius",
+      "columnType": "double",
+      "regexpReplace": [
+        ["[.]", ""],
+        [",", "."]
+      ]
+    },
+    {
+      "columnName": "nu_temperatura_max_celcius",
+      "columnType": "double",
+      "regexpReplace": [
+        ["[.]", ""],
+        [",", "."]
+      ]
+    },
+    {
+      "columnName": "nu_temperatura_orvalho_max_ant_celcius",
+      "columnType": "double",
+      "regexpReplace": [
+        ["[.]", ""],
+        [",", "."]
+      ]
+    },
+    {
+      "columnName": "nu_temperatura_orvalho_min_ant_celcius",
+      "columnType": "double",
+      "regexpReplace": [
+        ["[.]", ""],
+        [",", "."]
+      ]
+    },
+    {
+      "columnName": "nu_umidade_relativa_hora_percental_max",
+      "columnType": "int"
+    },
+    {
+      "columnName": "nu_umidade_relativa_hora_percental_min",
+      "columnType": "int"
+    },
+    { 
+      "columnName": "nu_umidade_relativa_percental", 
+      "columnType": "int" 
+    },
+    { 
+      "columnName": "nu_vento_direcao_horaria_graus", 
+      "columnType": "int" 
+    },
+    {
+      "columnName": "nu_vento_rajada_max_metros_segundo",
+      "columnType": "double",
+      "regexpReplace": [
+        ["[.]", ""],
+        [",", "."]
+      ]
+    },
+    {
+      "columnName": "nu_vento_velocidade_horaria_metros_segundos",
+      "columnType": "double",
+      "regexpReplace": [
+        ["[.]", ""],
+        [",", "."]
+      ]
+    }
+  ]
+}

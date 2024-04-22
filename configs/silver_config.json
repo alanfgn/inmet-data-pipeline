@@ -1,0 +1,171 @@
+{
+  "inputs": [
+    {
+      "name": "2013",
+      "inputPath": "s3a://idp-bronze/processed/2013",
+      "metadataPath": "metadata.json",
+      "tablePath": "table/"
+    },
+    {
+      "name": "2014",
+      "inputPath": "s3a://idp-bronze/processed/2014",
+      "metadataPath": "metadata.json",
+      "tablePath": "table/"
+    },
+    {
+      "name": "2015",
+      "inputPath": "s3a://idp-bronze/processed/2015",
+      "metadataPath": "metadata.json",
+      "tablePath": "table/"
+    },
+    {
+      "name": "2016",
+      "inputPath": "s3a://idp-bronze/processed/2016",
+      "metadataPath": "metadata.json",
+      "tablePath": "table/"
+    },
+    {
+      "name": "2017",
+      "inputPath": "s3a://idp-bronze/processed/2017",
+      "metadataPath": "metadata.json",
+      "tablePath": "table/"
+    },
+    {
+      "name": "2018",
+      "inputPath": "s3a://idp-bronze/processed/2018",
+      "metadataPath": "metadata.json",
+      "tablePath": "table/"
+    },
+    {
+      "name": "2019",
+      "inputPath": "s3a://idp-bronze/processed/2019",
+      "metadataPath": "metadata.json",
+      "tablePath": "table/"
+    },
+    {
+      "name": "2020",
+      "inputPath": "s3a://idp-bronze/processed/2020",
+      "metadataPath": "metadata.json",
+      "tablePath": "table/"
+    },
+    {
+      "name": "2021",
+      "inputPath": "s3a://idp-bronze/processed/2021",
+      "metadataPath": "metadata.json",
+      "tablePath": "table/"
+    },
+    {
+      "name": "2022",
+      "inputPath": "s3a://idp-bronze/processed/2022",
+      "metadataPath": "metadata.json",
+      "tablePath": "table/"
+    },
+    {
+      "name": "2023",
+      "inputPath": "s3a://idp-bronze/processed/2023",
+      "metadataPath": "metadata.json",
+      "tablePath": "table/"
+    }
+  ],
+  "output": {
+    "path": "s3a://idp-silver/inmet",
+    "partitionBy": ["co_regiao", "co_df", "co_estacao", "nu_ano"]
+  },
+  "normalizations": [
+    {
+      "normalizationType": "to_null",
+      "parameters": ["-9999", "-9999.0"],
+      "columns": ["nu_precipitacao_total_milimetro", "nu_temperatura_max_celcius", "nu_temperatura_min_celcius"]
+    },
+    {
+      "normalizationType": "remove_nulls",
+      "columns": ["nu_temperatura_max_celcius", "nu_temperatura_min_celcius"]
+    }
+  ],
+  "tableStructure": [
+    {
+      "columnName": "co_regiao",
+      "fromMetadata": "co_regiao",
+      "columnType": "string",
+      "nullable": true
+    },
+    {
+      "columnName": "co_df",
+      "fromMetadata": "co_df",
+      "columnType": "string",
+      "nullable": true
+    },
+    {
+      "columnName": "co_estacao",
+      "fromMetadata": "co_estacao",
+      "columnType": "string",
+      "nullable": true
+    },
+    {
+      "columnName": "ds_estacao",
+      "fromMetadata": "ds_estacao",
+      "columnType": "string",
+      "nullable": true
+    },
+    {
+      "columnName": "nu_ano",
+      "value": "year(dt_data)",
+      "columnType": "int",
+      "nullable": true
+    },
+    { 
+      "columnName": "dt_data", 
+      "columnType": "date", 
+      "nullable": true 
+    },
+    { 
+      "columnName": "hr_hora_utc", 
+      "columnType": "int", 
+      "nullable": true 
+    },
+    {
+      "columnName": "date_time",
+      "value": "dateadd(hour, hr_hora_utc/100, dt_data)",
+      "columnType": "timestamp"
+    },
+    {
+      "columnName": "nu_precipitacao_total_milimetro",
+      "columnType": "double",
+      "nullable": true
+    },
+    {
+      "columnName": "nu_temperatura_min_celcius",
+      "columnType": "double",
+      "nullable": true
+    },
+    {
+      "columnName": "nu_temperatura_max_celcius",
+      "columnType": "double",
+      "nullable": true
+    },
+    {
+      "columnName": "nu_temperatura_avg_celcius",
+      "value": "(nu_temperatura_min_celcius + nu_temperatura_max_celcius)/2",
+      "columnType": "double",
+      "nullable": true
+    },
+    {
+      "columnName": "nu_longitude",
+      "fromMetadata": "nu_longitude",
+      "columnType": "decimal(15,9)",
+      "nullable": true
+    },
+    {
+      "columnName": "nu_latitude",
+      "fromMetadata": "nu_latitude",
+      "columnType": "decimal(15,9)",
+      "nullable": true
+    },
+    {
+      "columnName": "nu_altitude",
+      "fromMetadata": "nu_altitude",
+      "columnType": "decimal(10,3)",
+      "nullable": true
+    }
+  ]
+}
