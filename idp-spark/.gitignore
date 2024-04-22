@@ -1,0 +1,6 @@
+target
+dependency-reduced-pom.xml
+src/test/resources/bronze/processed
+src/test/resources/silver
+src/test/resources/gold
+.idea

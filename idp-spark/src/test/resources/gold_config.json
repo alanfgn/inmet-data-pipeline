@@ -1,0 +1,128 @@
+{
+  "inputPath": "src/test/resources/silver",
+  "outputs": [
+    {
+      "name": "Detalhativo por estaçào",
+      "path": "src/test/resources/gold/estacao_per_year_month",
+      "operations": [
+        {
+          "operationType": "filter",
+          "parameters": ["substring(co_estacao, 0, 1) = 'A'"],
+          "columns": []
+        },
+        {
+          "operationType": "create_columns",
+          "columns": [
+            "trunc(dt_data, 'month') as year_month"
+          ]
+        },
+        {
+          "operationType": "group_by",
+          "parameters": ["co_estacao", "year_month"],
+          "columns": [
+            "avg(nu_latitude) as nu_latitude",
+            "avg(nu_longitude) as nu_longitude",
+            "max(ds_estacao) as ds_estacao",
+            "avg(nu_temperatura_avg_celcius) as nu_temperatura_avg_celcius",
+            "avg(nu_temperatura_max_celcius) as nu_temperatura_avg_max_celcius",
+            "avg(nu_temperatura_min_celcius) as nu_temperatura_avg_min_celcius",
+            "avg(nu_precipitacao_total_milimetro) as nu_precipitacao_total_avg_milimetro",
+            "max(nu_temperatura_max_celcius) as nu_temperatura_max_celcius",
+            "min(nu_temperatura_min_celcius) as nu_temperatura_min_celcius"
+          ]
+        }
+      ],
+      "columns": [
+        { "columnName": "co_estacao", "columnType": "string" },
+        { "columnName": "ds_estacao", "columnType": "string" },
+        { "columnName": "nu_latitude", "columnType": "decimal(15,9)" },
+        { "columnName": "nu_longitude", "columnType": "decimal(15,9)" },
+        { "columnName": "year_month", "columnType": "date" },
+        { "columnName": "nu_temperatura_avg_celcius", "columnType": "double" },
+        { "columnName": "nu_temperatura_avg_max_celcius", "columnType": "double" },
+        { "columnName": "nu_temperatura_avg_min_celcius", "columnType": "double" },
+        { "columnName": "nu_precipitacao_total_avg_milimetro", "columnType": "double" },
+        { "columnName": "nu_temperatura_max_celcius", "columnType": "double" },
+        { "columnName": "nu_temperatura_min_celcius", "columnType": "double" }      
+      ]
+    },
+    {
+      "name": "ano e mes por região",
+      "path": "src/test/resources/gold/region_per_year_month",
+      "operations": [
+        {
+          "operationType": "filter",
+          "parameters": ["substring(co_estacao, 0, 1) = 'A'"],
+          "columns": []
+        },
+        {
+          "operationType": "create_columns",
+          "columns": [
+            "trunc(dt_data, 'month') as year_month"
+          ]
+        },
+        {
+          "operationType": "group_by",
+          "parameters": ["co_regiao", "year_month"],
+          "columns": [
+            "avg(nu_temperatura_avg_celcius) as nu_temperatura_avg_celcius",
+            "avg(nu_temperatura_max_celcius) as nu_temperatura_avg_max_celcius",
+            "avg(nu_temperatura_min_celcius) as nu_temperatura_avg_min_celcius",
+            "avg(nu_precipitacao_total_milimetro) as nu_precipitacao_total_avg_milimetro",
+            "max(nu_temperatura_max_celcius) as nu_temperatura_max_celcius",
+            "min(nu_temperatura_min_celcius) as nu_temperatura_min_celcius"
+          ]
+        }
+      ],
+      "columns": [
+        { "columnName": "co_regiao", "columnType": "string" },
+        { "columnName": "year_month", "columnType": "date" },
+        { "columnName": "nu_temperatura_avg_celcius", "columnType": "double" },
+        { "columnName": "nu_temperatura_avg_max_celcius", "columnType": "double" },
+        { "columnName": "nu_temperatura_avg_min_celcius", "columnType": "double" },
+        { "columnName": "nu_precipitacao_total_avg_milimetro", "columnType": "double" },
+        { "columnName": "nu_temperatura_max_celcius", "columnType": "double" },
+        { "columnName": "nu_temperatura_min_celcius", "columnType": "double" }
+      ]
+    },
+    {
+      "name": "ano e mes por df",
+      "path": "src/test/resources/gold/state_per_year_month",
+      "operations": [
+        {
+          "operationType": "filter",
+          "parameters": ["substring(co_estacao, 0, 1) = 'A'"],
+          "columns": []
+        },
+        {
+          "operationType": "create_columns",
+          "columns": [
+            "trunc(dt_data, 'month') as year_month"
+          ]
+        },
+        {
+          "operationType": "group_by",
+          "parameters": ["co_df", "year_month"],
+          "columns": [
+            "avg(nu_temperatura_avg_celcius) as nu_temperatura_avg_celcius",
+            "avg(nu_temperatura_max_celcius) as nu_temperatura_avg_max_celcius",
+            "avg(nu_temperatura_min_celcius) as nu_temperatura_avg_min_celcius",
+            "avg(nu_precipitacao_total_milimetro) as nu_precipitacao_total_avg_milimetro",
+            "max(nu_temperatura_max_celcius) as nu_temperatura_max_celcius",
+            "min(nu_temperatura_min_celcius) as nu_temperatura_min_celcius"
+          ]
+        }
+      ],
+      "columns": [
+        { "columnName": "co_df", "columnType": "string" },
+        { "columnName": "year_month", "columnType": "date" },
+        { "columnName": "nu_temperatura_avg_celcius", "columnType": "double" },
+        { "columnName": "nu_temperatura_avg_max_celcius", "columnType": "double" },
+        { "columnName": "nu_temperatura_avg_min_celcius", "columnType": "double" },
+        { "columnName": "nu_precipitacao_total_avg_milimetro", "columnType": "double" },
+        { "columnName": "nu_temperatura_max_celcius", "columnType": "double" },
+        { "columnName": "nu_temperatura_min_celcius", "columnType": "double" }
+      ]
+    }
+  ]
+}
