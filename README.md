@@ -24,13 +24,42 @@ Below is the list of technologies used for implementation.
 ## How to start enviroment with Minikube
 
 ```sh
-
-make start-minukbe 
+make start-minikube 
 
 eval $(minikube docker-env)
 
 make start
-
 ```
 
+## How to Access available consoles
 
+
+- Airflow - http://localhost:8080/ 
+    - user: admin 
+    - password: idp-password 
+- Minio-tenant - http://localhost:9091/
+    - user: idp-tenant-access
+    - password: idp-tenant-secret
+- Grafana - http://localhost:3000/
+    - user: admin
+    - password: [get by `make get-grafana-secret`]
+
+
+## How to configure correct Datasource in Grafana
+
+**Name**
+`grafana-postgresql-datasource`
+
+**Host URL**
+`postgresql.postgresql-ns.svc.cluster.local:5432`
+
+**Database name**
+`postgres`
+
+**Password**
+`idp-postregresql-password`
+
+**TLS/SSL Mode**
+`Disable`
+
+The grafana file to import is in `/configs/grafana-dashboard.json`

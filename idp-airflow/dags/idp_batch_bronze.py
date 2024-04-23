@@ -80,4 +80,4 @@ trigger_silver = TriggerDagRunOperator(
 )
 
 start >> etl_batch_spark_operator_bronze_1 >> monitor_spark_app_status_bronze_1 >> trigger_silver
-start >> etl_batch_spark_operator_bronze_2 >> monitor_spark_app_status_bronze_2 >> trigger_silver
+etl_batch_spark_operator_bronze_1 >> etl_batch_spark_operator_bronze_2 >> monitor_spark_app_status_bronze_2 >> trigger_silver

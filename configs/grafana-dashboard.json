@@ -36,8 +36,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-postgresql-datasource",
-        "uid": "bdgaccq0cblz4d"
+        "type": "grafana-postgresql-datasource"
+        
       },
       "fieldConfig": {
         "defaults": {
@@ -150,8 +150,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "grafana-postgresql-datasource",
-            "uid": "bdgaccq0cblz4d"
+            "type": "grafana-postgresql-datasource"
+            
           },
           "editorMode": "code",
           "format": "table",
@@ -178,8 +178,8 @@
         },
         {
           "datasource": {
-            "type": "grafana-postgresql-datasource",
-            "uid": "bdgaccq0cblz4d"
+            "type": "grafana-postgresql-datasource"
+            
           },
           "editorMode": "code",
           "format": "table",
@@ -224,8 +224,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-postgresql-datasource",
-        "uid": "bdgaccq0cblz4d"
+        "type": "grafana-postgresql-datasource"
+        
       },
       "fieldConfig": {
         "defaults": {
@@ -307,8 +307,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "grafana-postgresql-datasource",
-            "uid": "bdgaccq0cblz4d"
+            "type": "grafana-postgresql-datasource"
+            
           },
           "editorMode": "code",
           "format": "table",
@@ -339,8 +339,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-postgresql-datasource",
-        "uid": "bdgaccq0cblz4d"
+        "type": "grafana-postgresql-datasource"
+        
       },
       "fieldConfig": {
         "defaults": {
@@ -421,8 +421,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "grafana-postgresql-datasource",
-            "uid": "bdgaccq0cblz4d"
+            "type": "grafana-postgresql-datasource"
+            
           },
           "editorMode": "code",
           "format": "table",
@@ -466,8 +466,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-postgresql-datasource",
-        "uid": "bdgaccq0cblz4d"
+        "type": "grafana-postgresql-datasource"
+        
       },
       "description": "",
       "fieldConfig": {
@@ -591,8 +591,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "grafana-postgresql-datasource",
-            "uid": "bdgaccq0cblz4d"
+            "type": "grafana-postgresql-datasource"
+            
           },
           "editorMode": "code",
           "format": "table",
@@ -623,8 +623,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-postgresql-datasource",
-        "uid": "bdgaccq0cblz4d"
+        "type": "grafana-postgresql-datasource"
+        
       },
       "fieldConfig": {
         "defaults": {
@@ -702,8 +702,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "grafana-postgresql-datasource",
-            "uid": "bdgaccq0cblz4d"
+            "type": "grafana-postgresql-datasource"
+            
           },
           "editorMode": "code",
           "format": "table",
@@ -753,8 +753,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-postgresql-datasource",
-        "uid": "bdgaccq0cblz4d"
+        "type": "grafana-postgresql-datasource"
+        
       },
       "description": "",
       "fieldConfig": {
@@ -888,8 +888,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "grafana-postgresql-datasource",
-            "uid": "bdgaccq0cblz4d"
+            "type": "grafana-postgresql-datasource"
+            
           },
           "editorMode": "code",
           "format": "table",
@@ -920,8 +920,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-postgresql-datasource",
-        "uid": "bdgaccq0cblz4d"
+        "type": "grafana-postgresql-datasource"
+        
       },
       "fieldConfig": {
         "defaults": {
@@ -1003,8 +1003,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "grafana-postgresql-datasource",
-            "uid": "bdgaccq0cblz4d"
+            "type": "grafana-postgresql-datasource"
+            
           },
           "editorMode": "code",
           "format": "table",
@@ -1050,8 +1050,8 @@
           ]
         },
         "datasource": {
-          "type": "grafana-postgresql-datasource",
-          "uid": "bdgaccq0cblz4d"
+          "type": "grafana-postgresql-datasource"
+          
         },
         "definition": "select distinct co_df from state_per_year_month",
         "description": "",
@@ -1080,8 +1080,8 @@
           ]
         },
         "datasource": {
-          "type": "grafana-postgresql-datasource",
-          "uid": "bdgaccq0cblz4d"
+          "type": "grafana-postgresql-datasource"
+          
         },
         "definition": "select distinct co_regiao from region_per_year_month",
         "hide": 0,

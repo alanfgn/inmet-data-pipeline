@@ -2,33 +2,33 @@
   "folders": [
     {
       "name": "2013",
-      "inputPath": "/s3a://idp-bronze/raw/2013",
-      "outputPath": "/s3a://idp-bronze/processed/2013/"
+      "inputPath": "s3a://idp-bronze/raw/2013",
+      "outputPath": "s3a://idp-bronze/processed/2013/"
     },
     {
       "name": "2014",
-      "inputPath": "/s3a://idp-bronze/raw/2014",
-      "outputPath": "/s3a://idp-bronze/processed/2014/"
+      "inputPath": "s3a://idp-bronze/raw/2014",
+      "outputPath": "s3a://idp-bronze/processed/2014/"
     },
     {
       "name": "2015",
-      "inputPath": "/s3a://idp-bronze/raw/2015",
-      "outputPath": "/s3a://idp-bronze/processed/2015/"
+      "inputPath": "s3a://idp-bronze/raw/2015",
+      "outputPath": "s3a://idp-bronze/processed/2015/"
     },
     {
       "name": "2016",
-      "inputPath": "/s3a://idp-bronze/raw/2016",
-      "outputPath": "/s3a://idp-bronze/processed/2016/"
+      "inputPath": "s3a://idp-bronze/raw/2016",
+      "outputPath": "s3a://idp-bronze/processed/2016/"
     },
     {
       "name": "2017",
-      "inputPath": "/s3a://idp-bronze/raw/2017",
-      "outputPath": "/s3a://idp-bronze/processed/2017/"
+      "inputPath": "s3a://idp-bronze/raw/2017",
+      "outputPath": "s3a://idp-bronze/processed/2017/"
     },
     {
       "name": "2018",
-      "inputPath": "/s3a://idp-bronze/raw/2018",
-      "outputPath": "/s3a://idp-bronze/processed/2018/"
+      "inputPath": "s3a://idp-bronze/raw/2018",
+      "outputPath": "s3a://idp-bronze/processed/2018/"
     }
   ],
   "metadataStructure": {

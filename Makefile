@@ -36,10 +36,10 @@ build-spark-image:
 
 start-enviroment:
 	terraform -chdir=cluster/ init
-	terraform -chdir=cluster/ apply
+	terraform -chdir=cluster/ apply -auto-approve
 
 load-data:
-	mc alias set idp-tenant http://localhost:9000 access-idp-tenant secret-idp-tenant --insecure
+	mc alias set idp-tenant http://localhost:9000 idp-tenant-access idp-tenant-secret --insecure
 	mc cp --recursive ./configs/ idp-tenant/idp-config/
 	mc cp --recursive ./data/raw/ idp-tenant/idp-bronze/raw/
 
@@ -64,3 +64,5 @@ expose-postgresql:
 open-psql:
 	kubectl run postgresql-postgresql-client --rm --tty -i --restart='Never' --namespace postgresql-ns --image docker.io/bitnami/postgresql:16.1.0-debian-11-r19 --env="PGPASSWORD=$(shell kubectl get secret --namespace postgresql-ns postgresql -o jsonpath="{.data.postgres-password}" | base64 -d))" --command -- psql --host postgresql-postgresql -U postgres -d idp_inmet -p 5432
 	
+get-grafana-secret:
+	echo $(shell kubectl get secret --namespace grafana-ns grafana -o jsonpath="{.data.admin-password}" | base64 -d)
