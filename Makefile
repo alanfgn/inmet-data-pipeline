@@ -6,7 +6,6 @@ start:
 	$(MAKE) build-spark-image
 	$(MAKE) start-enviroment
 	$(MAKE) expose-all
-	$(MAKE) load-data
 
 end:
 	terraform -chdir=cluster/ destroy

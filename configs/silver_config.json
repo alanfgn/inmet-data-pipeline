@@ -65,6 +65,12 @@
       "inputPath": "s3a://idp-bronze/processed/2023",
       "metadataPath": "metadata.json",
       "tablePath": "table/"
+    },
+    {
+      "name": "2024",
+      "inputPath": "s3a://idp-bronze/processed/2024",
+      "metadataPath": "metadata.json",
+      "tablePath": "table/"
     }
   ],
   "output": {

@@ -24,6 +24,11 @@
       "name": "2023",
       "inputPath": "s3a://idp-bronze/raw/2023",
       "outputPath": "s3a://idp-bronze/processed/2023/"
+    },
+    {
+      "name": "2024",
+      "inputPath": "s3a://idp-bronze/raw/2024",
+      "outputPath": "s3a://idp-bronze/processed/2024/"
     }
   ],
   "metadataStructure": {

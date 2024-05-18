@@ -56,6 +56,9 @@ make start
 **Database name**
 `postgres`
 
+**Username**
+`postgres`
+
 **Password**
 `idp-postregresql-password`
 
