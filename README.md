@@ -1,5 +1,8 @@
 # Inmet Data Pipeline (IDP)
 
+![Architecture Draw](imgs/inmet-data-pipeline-architecture.png)
+
+
 This project is a case study for undergraduate dissertation of the postgraduate course in Data Engineering at the Pontifical Catholic University of Minas Gerais.
 
 The data used for this pipeline was provided by INMET and can be found at https://bdmep.inmet.gov.br/
